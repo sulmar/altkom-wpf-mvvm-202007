@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:Altkom.WPFMVVM.WpfClient"
              StartupUri="Views/ShellView.xaml">
     <Application.Resources>
-         
+
+        <ResourceDictionary Source="Resources/LightModeStyles.xaml" />
+
     </Application.Resources>
 </Application>

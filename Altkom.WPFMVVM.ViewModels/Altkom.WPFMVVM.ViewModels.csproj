@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Altkom.WPFMVVM.FakeServices\Altkom.WPFMVVM.FakeServices.csproj" />
+    <ProjectReference Include="..\Altkom.WPFMVVM.IServices\Altkom.WPFMVVM.IServices.csproj" />
+    <ProjectReference Include="..\Altkom.WPFMVVM.Models\Altkom.WPFMVVM.Models.csproj" />
+  </ItemGroup>
+
+</Project>

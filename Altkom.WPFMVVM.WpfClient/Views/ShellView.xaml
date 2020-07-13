@@ -3,21 +3,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Altkom.WPFMVVM.WpfClient.Views"
+        xmlns:local="clr-namespace:Altkom.WPFMVVM.WpfClient.Views"        
+        xmlns:sys="clr-namespace:System;assembly=mscorlib" 
         mc:Ignorable="d"
         Title="ShellView" Height="450" Width="800">
-    
-    <DockPanel>
+
+    <Window.Resources>
+
+        <!--<sys:Double x:Key="MyWidth">150</sys:Double>-->
         
+    </Window.Resources>
+
+    <DockPanel>
+
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-            <Button Background="Green" Foreground="White" Margin="5" Width="100" Height="40">Customers</Button>
-            <Button Background="Blue" Foreground="White" Margin="5" Width="100" Height="40">Products</Button>
+            <Button>Customers</Button>
+            <Button>Products</Button>
+            <Button Style="{StaticResource SpecialButtonStyle}" >About</Button>
+            <Button>Call</Button>
         </StackPanel>
 
         <StatusBar DockPanel.Dock="Bottom">wersja 1.0</StatusBar>
-        
-        <Grid Background="White">
-           
+
+        <Grid>
+            <Frame Source="CustomersView.xaml" />
         </Grid>
 
     </DockPanel>

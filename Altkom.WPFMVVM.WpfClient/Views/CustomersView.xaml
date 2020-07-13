@@ -1,0 +1,53 @@
+﻿<Page x:Class="Altkom.WPFMVVM.WpfClient.Views.CustomersView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Altkom.WPFMVVM.WpfClient.Views"
+      xmlns:vm="clr-namespace:Altkom.WPFMVVM.ViewModels;assembly=Altkom.WPFMVVM.ViewModels"            
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CustomersView">
+
+    <Page.Resources>
+        <!--<Style TargetType="Button">
+            <Setter Property="Background" Value="Blue" />
+        </Style>-->
+    </Page.Resources>
+
+    <Page.DataContext>
+        <vm:CustomersViewModel />
+    </Page.DataContext>
+
+    <!-- this.DataContext = new CustomersViewModel(); -->
+
+    <Grid>
+
+        <!--<Label HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Foreground="White">Customers View</Label>-->
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+
+        <ListBox ItemsSource="{Binding Customers}"
+                 DisplayMemberPath="FullName"
+                 SelectedItem="{Binding Path=SelectedCustomer}" >
+        </ListBox>
+
+        <StackPanel Grid.Column="1" DataContext="{Binding SelectedCustomer}" >
+            <TextBlock Text="{Binding Path=FullName, Mode=OneWay}" />
+            <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}" />
+            <CheckBox IsChecked="{Binding Path=IsRemoved}" />
+            <Button>Send</Button>
+        </StackPanel>
+
+        
+       
+        
+    </Grid>
+</Page>
