@@ -22,4 +22,7 @@ namespace Altkom.WPFMVVM.FakeServices.Fakers
             RuleFor(p => p.IsRemoved, f => f.Random.Bool(0.2f));
         }
     }
+
+    // Generowanie PESEL
+    // https://github.com/sulmar/Bogus.Extensions.Poland
 }
