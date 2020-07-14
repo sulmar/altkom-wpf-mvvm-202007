@@ -9,6 +9,25 @@ namespace Altkom.WPFMVVM.ViewModels
     {
         public event EventHandler CanExecuteChanged;
 
+        public void OnCanExexuteChanged()
+        {
+            this.CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+        }
+        
+        // wymaga .NET Framework 4.x
+        //public event EventHandler CanExecuteChanged
+        //{
+        //    add
+        //    {
+        //        CommandManager.RequerySuggested += value;
+        //    }
+
+        //    remove
+        //    {
+        //        CommandManager.RequerySuggested -= value;
+        //    }
+        //}
+
         private readonly Action execute;
         private readonly Func<bool> canExecute;
 

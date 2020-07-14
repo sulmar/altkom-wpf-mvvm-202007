@@ -38,8 +38,9 @@
             <TextBox Text="{Binding SelectedProduct.UnitPrice, UpdateSourceTrigger=PropertyChanged}" />
 
             <CheckBox Content="Increment" IsChecked="{Binding IsIncrement}" />
-            <Button Command="{Binding CalculateCommand}">Calculate</Button>
+            <Button Command="{Binding CalculateCommand}" >Calculate</Button>
             <Button Command="{Binding RemoveCommand}">Remove</Button>
+            <Button Command="{Binding ToUpperCommand}">To Upper</Button>
             
         </StackPanel>
     </Grid>
