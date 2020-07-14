@@ -33,9 +33,21 @@
         </Grid.ColumnDefinitions>
         
 
-        <ListBox ItemsSource="{Binding Customers}"
-                 DisplayMemberPath="FullName"
-                 SelectedItem="{Binding Path=SelectedCustomer}" >
+        <ListBox ItemsSource="{Binding Customers}"                 
+                 SelectedItem="{Binding Path=SelectedCustomer}"
+                 ItemTemplate="{StaticResource CustomerTemplate}" >
+
+            <!--<ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="50" Source="{Binding Photo}" />
+                        <Label Width="100" Content="{Binding FirstName}" VerticalAlignment="Center" />
+                        <Label Width="100" Content="{Binding LastName}" VerticalAlignment="Center" />
+                        <CheckBox IsChecked="{Binding IsRemoved}" VerticalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>-->
+            
         </ListBox>
 
         <StackPanel Grid.Column="1" DataContext="{Binding SelectedCustomer}" >

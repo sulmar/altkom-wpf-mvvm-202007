@@ -7,7 +7,7 @@ namespace Altkom.WPFMVVM.Models
     {
         public string FirstName
         {
-            get => firstName; 
+            get => firstName;
             set
             {
                 firstName = value;
@@ -30,14 +30,20 @@ namespace Altkom.WPFMVVM.Models
         public string Photo { get; set; }
         public decimal Salary { get; set; }
 
-        private bool isRemoved;
+        public bool IsSalaryOverLimit => Salary > 150;
+
         private string lastName;
         private string firstName;
+        private bool isRemoved;
 
         public bool IsRemoved
         {
-            get => isRemoved;
-            set => isRemoved = value;
+            get => isRemoved; 
+            set
+            {
+                isRemoved = value;
+                OnPropertyChanged();
+            }
         }
 
 

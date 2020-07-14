@@ -11,9 +11,18 @@ namespace Altkom.WPFMVVM.ViewModels
     public class CustomersViewModel : BaseViewModel
     {
         public IEnumerable<Customer> Customers { get; private set; }
-        public Customer SelectedCustomer { get; set; }
+        public Customer SelectedCustomer
+        {
+            get => selectedCustomer; 
+            set
+            {
+                selectedCustomer = value;
+                OnPropertyChanged();
+            }
+        }
 
         private readonly ICustomerService customerService;
+        private Customer selectedCustomer;
 
         public CustomersViewModel()
             : this(new FakeCustomerService(new CustomerFaker()))
@@ -23,9 +32,9 @@ namespace Altkom.WPFMVVM.ViewModels
         public CustomersViewModel(ICustomerService customerService)
         {
             this.customerService = customerService;
-            
+
             SelectedCustomer = new Customer();
-            
+
 
             Load();
         }

@@ -62,6 +62,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\CMYKToBrushConverter.cs" />
     <Compile Include="Views\CustomersView.xaml.cs">
       <DependentUpon>CustomersView.xaml</DependentUpon>
     </Compile>
@@ -104,6 +106,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\DataTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\LightModeStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,6 +128,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Altkom.WPFMVVM.Models\Altkom.WPFMVVM.Models.csproj">
+      <Project>{fc53e507-bb61-4080-bdaa-d121e9e31a42}</Project>
+      <Name>Altkom.WPFMVVM.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Altkom.WPFMVVM.ViewModels\Altkom.WPFMVVM.ViewModels.csproj">
       <Project>{b644001a-de78-4e24-8583-ff6fb69c786a}</Project>
       <Name>Altkom.WPFMVVM.ViewModels</Name>

@@ -5,7 +5,12 @@
              StartupUri="Views/ShellView.xaml">
     <Application.Resources>
 
-        <ResourceDictionary Source="Resources/LightModeStyles.xaml" />
-
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/LightModeStyles.xaml" />
+                <ResourceDictionary Source="Resources/DataTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
     </Application.Resources>
 </Application>

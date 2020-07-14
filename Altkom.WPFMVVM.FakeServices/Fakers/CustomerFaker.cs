@@ -18,11 +18,11 @@ namespace Altkom.WPFMVVM.FakeServices.Fakers
             RuleFor(p => p.FirstName, f => f.Person.FirstName);
             RuleFor(p => p.LastName, f => f.Person.LastName);
             RuleFor(p => p.Photo, f => f.Person.Avatar);
-             // RuleFor(p => p.Salary, f => f.Random.Decimal(100, 200));
-            Ignore(p => p.Salary);
+            RuleFor(p => p.Salary, f => decimal.Round( f.Random.Decimal(100, 200), 0));
+            
             RuleFor(p => p.IsRemoved, f => f.Random.Bool(0.2f));
             
-            RuleFor(p => p.Salary, f => f.Commerce.Random.Decimal(100, 200));
+            
         }
     }
 
