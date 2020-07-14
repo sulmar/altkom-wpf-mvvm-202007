@@ -2,7 +2,33 @@
 {
     public class Product : BaseEntity
     {
-        public string Name { get; set; }
-        public string Color { get; set; }
+        private string name;
+        private string color;
+        private decimal unitPrice;
+
+        public string Name
+        {
+            get => name; set
+            {
+                name = value;
+                OnPropertyChanged();
+            }
+        }
+        public string Color
+        {
+            get => color; set
+            {
+                color = value;
+                OnPropertyChanged();
+            }
+        }
+        public decimal UnitPrice
+        {
+            get => unitPrice; set
+            {
+                unitPrice = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Altkom.WPFMVVM.ViewModels
 {
-    public class CustomersViewModel
+    public class CustomersViewModel : BaseViewModel
     {
         public IEnumerable<Customer> Customers { get; private set; }
         public Customer SelectedCustomer { get; set; }
