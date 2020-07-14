@@ -23,6 +23,6 @@ namespace Altkom.WPFMVVM.WpfClient.Views
         public ProductsView()
         {
             InitializeComponent();
-        }
+        }        
     }
 }

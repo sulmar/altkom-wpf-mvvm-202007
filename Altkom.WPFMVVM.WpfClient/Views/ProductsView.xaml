@@ -32,10 +32,15 @@
             </ListView.View>
         </ListView>
 
-        <StackPanel Grid.Column="1" DataContext="{Binding SelectedProduct}">
-            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBox Text="{Binding Color, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBox Text="{Binding UnitPrice, UpdateSourceTrigger=PropertyChanged}" />
+        <StackPanel Grid.Column="1">
+            <TextBox Text="{Binding SelectedProduct.Name, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding SelectedProduct.Color, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding SelectedProduct.UnitPrice, UpdateSourceTrigger=PropertyChanged}" />
+
+            <CheckBox Content="Increment" IsChecked="{Binding IsIncrement}" />
+            <Button Command="{Binding CalculateCommand}">Calculate</Button>
+            <Button Command="{Binding RemoveCommand}">Remove</Button>
+            
         </StackPanel>
     </Grid>
 </Page>
