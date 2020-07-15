@@ -11,11 +11,11 @@ namespace Altkom.WPFMVVM.FakeServices
 {
     public class FakeProductService : FakeEntityService<Product>, IProductService
     {
-        public FakeProductService()
-            : this(new ProductFaker(new CMYKColorFaker()))
-        {
+        //public FakeProductService()
+        //    : this(new ProductFaker(new CMYKColorFaker()))
+        //{
 
-        }
+        //}
 
         public FakeProductService(Faker<Product> faker) : base(faker)
         {

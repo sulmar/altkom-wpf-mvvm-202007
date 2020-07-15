@@ -34,11 +34,11 @@ namespace Altkom.WPFMVVM.ViewModels
         private readonly IProductService productService;
         private Product selectedProduct;
 
-        public ProductsViewModel()
-            : this(new FakeProductService())
-        {
+        //public ProductsViewModel()
+        //    : this(new FakeProductService())
+        //{
 
-        }
+        //}
 
         public ProductsViewModel(IProductService productService)
         {

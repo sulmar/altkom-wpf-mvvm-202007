@@ -24,10 +24,10 @@ namespace Altkom.WPFMVVM.ViewModels
         private readonly ICustomerService customerService;
         private Customer selectedCustomer;
 
-        public CustomersViewModel()
-            : this(new FakeCustomerService(new CustomerFaker()))
-        {
-        }
+        //public CustomersViewModel()
+        //    : this(new FakeCustomerService(new CustomerFaker()))
+        //{
+        //}
 
         public CustomersViewModel(ICustomerService customerService)
         {

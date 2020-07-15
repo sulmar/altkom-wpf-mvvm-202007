@@ -6,6 +6,10 @@
     <Application.Resources>
 
         <ResourceDictionary>
+
+            <local:ViewModelLocator x:Key="ViewModelLocator" />
+
+
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/LightModeStyles.xaml" />
                 <ResourceDictionary Source="Resources/DataTemplates.xaml" />

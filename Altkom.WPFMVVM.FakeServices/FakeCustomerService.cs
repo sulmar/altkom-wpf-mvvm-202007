@@ -11,11 +11,11 @@ namespace Altkom.WPFMVVM.FakeServices
 
     public class FakeCustomerService : FakeEntityService<Customer>, ICustomerService
     {
-        public FakeCustomerService()
-            : this(new CustomerFaker())
-        {
+        //public FakeCustomerService()
+        //    : this(new CustomerFaker())
+        //{
 
-        }
+        //}
 
         public FakeCustomerService(Faker<Customer> faker) : base(faker)
         {

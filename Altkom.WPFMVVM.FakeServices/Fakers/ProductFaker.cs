@@ -8,7 +8,7 @@ namespace Altkom.WPFMVVM.FakeServices.Fakers
 {
     public class ProductFaker : Faker<Product>
     {
-        public ProductFaker(CMYKColorFaker colorFaker)
+        public ProductFaker(Faker<CMYKColor> colorFaker)
         {
             StrictMode(true);
             RuleFor(p => p.Id, f => f.IndexFaker);

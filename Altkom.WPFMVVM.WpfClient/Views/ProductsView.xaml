@@ -6,13 +6,14 @@
       xmlns:local="clr-namespace:Altkom.WPFMVVM.WpfClient.Views"
       xmlns:vm="clr-namespace:Altkom.WPFMVVM.ViewModels;assembly=Altkom.WPFMVVM.ViewModels"
       xmlns:c="clr-namespace:Altkom.WPFMVVM.WpfClient.Converters"
+      DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=ProductsViewModel}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ProductsView">
 
-    <Page.DataContext>
-        <vm:ProductsViewModel />
-    </Page.DataContext>
+    <!--<Page.DataContext>
+        <vm:ProductsViewModel  />
+    </Page.DataContext>-->
 
     <Page.Resources>
         <c:CMYKToBrushConverter x:Key="CMYKConverter" />
