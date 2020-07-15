@@ -12,7 +12,7 @@ namespace Altkom.WPFMVVM.FakeServices
     public class FakeProductService : FakeEntityService<Product>, IProductService
     {
         public FakeProductService()
-            : this(new ProductFaker())
+            : this(new ProductFaker(new CMYKColorFaker()))
         {
 
         }

@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Altkom.WPFMVVM.WpfClient.Views"
       xmlns:vm="clr-namespace:Altkom.WPFMVVM.ViewModels;assembly=Altkom.WPFMVVM.ViewModels"
+      xmlns:c="clr-namespace:Altkom.WPFMVVM.WpfClient.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ProductsView">
@@ -13,13 +14,19 @@
         <vm:ProductsViewModel />
     </Page.DataContext>
 
+    <Page.Resources>
+        <c:CMYKToBrushConverter x:Key="CMYKConverter" />
+    </Page.Resources>
+
     <Grid>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        
+
+        <!-- Products -->
+
         <ListView ItemsSource="{Binding Products}"
                   SelectedItem="{Binding SelectedProduct}"
                   >
@@ -28,9 +35,16 @@
                     <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
                     <GridViewColumn Header="Color" DisplayMemberBinding="{Binding Color}" />
                     <GridViewColumn Header="Unit Price" DisplayMemberBinding="{Binding UnitPrice}" />
+                    <GridViewColumn Header="C" DisplayMemberBinding="{Binding CMYKColor.C}" />
+                    <GridViewColumn Header="M" DisplayMemberBinding="{Binding CMYKColor.M}" />
+                    <GridViewColumn Header="Y" DisplayMemberBinding="{Binding CMYKColor.Y}" />
+                    <GridViewColumn Header="K" DisplayMemberBinding="{Binding CMYKColor.K}" />
+
                 </GridView>
             </ListView.View>
         </ListView>
+
+        <!-- Selected Product -->
 
         <StackPanel Grid.Column="1">
             <TextBox Text="{Binding SelectedProduct.Name, UpdateSourceTrigger=PropertyChanged}" />
@@ -41,7 +55,56 @@
             <Button Command="{Binding CalculateCommand}" >Calculate</Button>
             <Button Command="{Binding RemoveCommand}">Remove</Button>
             <Button Command="{Binding ToUpperCommand}">To Upper</Button>
-            
+
+            <Rectangle
+                Margin="10"
+                Width="200" 
+                Height="200">
+
+                <Rectangle.Fill>
+
+                    <MultiBinding Converter="{StaticResource CMYKConverter}">
+                        <Binding Path="SelectedProduct.CMYKColor.C" />
+                        <Binding Path="SelectedProduct.CMYKColor.M" />
+                        <Binding Path="SelectedProduct.CMYKColor.Y" />
+                        <Binding Path="SelectedProduct.CMYKColor.K" />
+                    </MultiBinding>
+                </Rectangle.Fill>
+
+            </Rectangle>
+
+            <Slider 
+                Value="{Binding SelectedProduct.CMYKColor.C}"
+                Minimum="0"
+                Maximum="100"
+                TickFrequency="1"
+                IsSnapToTickEnabled="True"
+                />
+
+            <Slider 
+                Value="{Binding SelectedProduct.CMYKColor.M}"
+                Minimum="0"
+                Maximum="100"
+                TickFrequency="1"
+                IsSnapToTickEnabled="True"
+                />
+
+            <Slider 
+                Value="{Binding SelectedProduct.CMYKColor.Y}"
+                Minimum="0"
+                Maximum="100"
+                TickFrequency="1"
+                IsSnapToTickEnabled="True"
+                />
+
+            <Slider 
+                Value="{Binding SelectedProduct.CMYKColor.K}"
+                Minimum="0"
+                Maximum="100"
+                TickFrequency="1"
+                IsSnapToTickEnabled="True"
+                />
+
         </StackPanel>
     </Grid>
 </Page>

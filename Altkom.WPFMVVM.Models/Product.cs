@@ -30,5 +30,9 @@
                 OnPropertyChanged();
             }
         }
+
+        public CMYKColor CMYKColor { get; set; }
+
+
     }
 }

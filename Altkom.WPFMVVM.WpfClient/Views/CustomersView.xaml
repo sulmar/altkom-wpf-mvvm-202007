@@ -54,6 +54,16 @@
             <TextBlock Text="{Binding Path=FullName, Mode=OneWay}" />
             <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
             <TextBox Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock>
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="{}{0} {1}">
+                        <Binding Path="FirstName" />
+                        <Binding Path="LastName" />
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+            
             <CheckBox IsChecked="{Binding Path=IsRemoved}" />
             <Button>Send</Button>
         </StackPanel>
