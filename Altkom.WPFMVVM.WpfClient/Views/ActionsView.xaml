@@ -22,18 +22,37 @@
                         <ListBox ItemsSource="{Binding Events}">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
+                                    <Canvas Width="400">
+                                        <Canvas.ToolTip>
+                                            <StackPanel>
+                                                <TextBlock Width="200" Text="{Binding Part.Name}" />
+                                                <TextBlock Width="50" Text="{Binding From, StringFormat={}{0:HH:mm}}" />
+                                                <TextBlock Width="50" Text="{Binding To, StringFormat={}{0:HH:mm}}" />
+                                            </StackPanel>
+                                        </Canvas.ToolTip>
+
+                                        <Rectangle 
+                                            Canvas.Left="{Binding From.AddHours(-6).TimeOfDay.TotalMinutes}"
+                                            Width="200" 
+                                            Height="10" 
+                                            Fill="Black" />
+
+
+
+
+                                    </Canvas>
+                                    <!--<StackPanel Orientation="Horizontal">
                                         <TextBlock Width="200" Text="{Binding Part.Name}" />
                                         <TextBlock Width="50" Text="{Binding From, StringFormat={}{0:HH:mm}}" />
                                         <TextBlock Width="50" Text="{Binding To, StringFormat={}{0:HH:mm}}" />
-                                    </StackPanel>
-                                    
-                                    
+                                    </StackPanel>-->
+
+
                                 </DataTemplate>
-                                
+
                             </ListBox.ItemTemplate>
                         </ListBox>
-                        
+
                     </DockPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

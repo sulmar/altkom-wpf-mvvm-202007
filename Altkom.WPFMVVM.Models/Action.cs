@@ -21,6 +21,7 @@ namespace Altkom.WPFMVVM.Models
 
     public class Part : BaseEntity
     {
+        
         public string Name { get; set; }
         public string SerialNumber { get; set; }
     }

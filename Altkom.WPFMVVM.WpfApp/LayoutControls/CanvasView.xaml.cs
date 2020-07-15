@@ -10,21 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Altkom.WPFMVVM.WpfClient.Views
+namespace Altkom.WPFMVVM.WpfApp.LayoutControls
 {
     /// <summary>
-    /// Interaction logic for ActionsView.xaml
+    /// Interaction logic for CanvasView.xaml
     /// </summary>
-    public partial class ActionsView : Page
+    public partial class CanvasView : Window
     {
-        
-        public ActionsView()
+        public CanvasView()
         {
-            InitializeComponent();
 
+            InitializeComponent();
         }
     }
 }
