@@ -19,6 +19,7 @@
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
             <Button>Customers</Button>
             <Button>Products</Button>
+            <Button>Actions</Button>
             <Button Style="{StaticResource SpecialButtonStyle}" >About</Button>
             <Button>Call</Button>
         </StackPanel>
@@ -26,7 +27,7 @@
         <StatusBar DockPanel.Dock="Bottom">wersja 1.0</StatusBar>
 
         <Grid>
-            <Frame Source="CustomersView.xaml" />
+            <Frame Source="ActionsView.xaml" />
         </Grid>
 
     </DockPanel>

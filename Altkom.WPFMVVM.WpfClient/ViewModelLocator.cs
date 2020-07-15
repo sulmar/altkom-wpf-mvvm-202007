@@ -22,6 +22,7 @@ namespace Altkom.WPFMVVM.WpfClient
 
             containerBuilder.RegisterType<ProductsViewModel>().SingleInstance();
             containerBuilder.RegisterType<CustomersViewModel>().SingleInstance();
+            containerBuilder.RegisterType<ActionsViewModel>().SingleInstance();
 
 #if DEBUG           
             containerBuilder.AddFakeServices();
@@ -40,5 +41,6 @@ namespace Altkom.WPFMVVM.WpfClient
         // public ProductsViewModel ProductsViewModel => new ProductsViewModel(new FakeProductService(new ProductFaker(new CMYKColorFaker())));
         public ProductsViewModel ProductsViewModel => container.Resolve<ProductsViewModel>();
         public CustomersViewModel CustomersViewModel => container.Resolve<CustomersViewModel>();
+        public ActionsViewModel ActionsViewModel => container.Resolve<ActionsViewModel>();
     }
 }

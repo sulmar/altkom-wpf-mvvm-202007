@@ -79,6 +79,9 @@
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\CMYKToBrushConverter.cs" />
     <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="Views\ActionsView.xaml.cs">
+      <DependentUpon>ActionsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CustomersView.xaml.cs">
       <DependentUpon>CustomersView.xaml</DependentUpon>
     </Compile>
@@ -126,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\LightModeStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActionsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

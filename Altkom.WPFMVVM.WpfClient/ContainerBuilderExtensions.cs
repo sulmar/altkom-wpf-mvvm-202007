@@ -20,6 +20,7 @@ namespace Altkom.WPFMVVM.WpfClient
         {
             containerBuilder.AddFakeCustomers();
             containerBuilder.AddFakeProducts();
+            containerBuilder.AddFakeActions();
 
             return containerBuilder;
         }
@@ -40,6 +41,17 @@ namespace Altkom.WPFMVVM.WpfClient
 
             return containerBuilder;
         }
+
+        public static ContainerBuilder AddFakeActions(this ContainerBuilder containerBuilder)
+        {
+            containerBuilder.RegisterType<FakeActionService>().As<IActionService>();
+            containerBuilder.RegisterType<ActionFaker>().As<Faker<Models.Action>>();
+            containerBuilder.RegisterType<EventFaker>().As<Faker<Models.Event>>();
+            containerBuilder.RegisterType<PartFaker>().As<Faker<Models.Part>>();
+
+            return containerBuilder;
+        }
+
 
     }
 }
