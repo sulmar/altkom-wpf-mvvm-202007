@@ -9,6 +9,8 @@ namespace Altkom.WPFMVVM.ViewModels
     {
         public IEnumerable<Models.Action> Actions { get; set; }
 
+        public Models.Event SelectedEvent { get; set; }
+
         private readonly IActionService actionService;
 
         public ActionsViewModel(IActionService actionService)

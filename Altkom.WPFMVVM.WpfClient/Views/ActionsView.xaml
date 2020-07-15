@@ -15,14 +15,29 @@
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <DockPanel>
+                    <DockPanel >
                         <Label Content="{Binding Number}" />
                         <Label Content="{Binding Name}" />
 
-                        <ListBox ItemsSource="{Binding Events}">
+                        <ListBox ItemsSource="{Binding Events}"
+                                 SelectedItem="{Binding SelectedEvent}" >
+
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <Grid />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                                                        
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <Canvas Width="400">
+                                    
+                                    <Canvas Width="400" Height="20">
                                         <Canvas.ToolTip>
                                             <StackPanel>
                                                 <TextBlock Width="200" Text="{Binding Part.Name}" />
@@ -31,10 +46,10 @@
                                             </StackPanel>
                                         </Canvas.ToolTip>
 
-                                        <Rectangle 
-                                            Canvas.Left="{Binding From.AddHours(-6).TimeOfDay.TotalMinutes}"
-                                            Width="200" 
-                                            Height="10" 
+                                        <Rectangle
+                                            Canvas.Left="{Binding FromTime.TotalMinutes}"
+                                            Width="{Binding Duration.Seconds}" 
+                                            Height="20" 
                                             Fill="Black" />
 
 
@@ -51,6 +66,10 @@
                                 </DataTemplate>
 
                             </ListBox.ItemTemplate>
+
+                            <!--<ListBox.RenderTransform>
+                                <RotateTransform Angle="270" />
+                            </ListBox.RenderTransform>-->
                         </ListBox>
 
                     </DockPanel>

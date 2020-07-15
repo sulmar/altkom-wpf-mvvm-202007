@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ItemsControls\ListBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LayoutControls\CanvasView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -78,6 +82,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ItemsControls\ListBoxView.xaml.cs">
+      <DependentUpon>ListBoxView.xaml</DependentUpon>
     </Compile>
     <Compile Include="LayoutControls\CanvasView.xaml.cs">
       <DependentUpon>CanvasView.xaml</DependentUpon>
