@@ -7,7 +7,7 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
         DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=ShellViewModel}"
         mc:Ignorable="d"
-        Title="ShellView" Height="450" Width="800">
+        Title="ShellView" Height="450" Width="1200">
 
     <Window.Resources>
 
@@ -34,6 +34,19 @@
             <Button Template="{StaticResource RounderButtonTemplate}"  Command="{Binding ShowViewCommand}" CommandParameter="Actions" >Actions</Button>
             <Button Template="{StaticResource RounderButtonTemplate}" Style="{StaticResource SpecialButtonStyle}" >About</Button>
             <Button Template="{StaticResource RounderButtonTemplate}" >Call</Button>
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="30" Source="{StaticResource SettingsImage}" Margin="5" />
+                    <TextBlock Text="Settings" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="30" Source="{StaticResource SettingsImage}" Margin="5" />
+                    <TextBlock Text="Admin Settings" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
         </StackPanel>
 
         <StatusBar DockPanel.Dock="Bottom">wersja 1.0</StatusBar>

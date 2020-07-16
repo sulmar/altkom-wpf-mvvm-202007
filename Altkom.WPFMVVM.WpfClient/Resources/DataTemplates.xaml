@@ -64,6 +64,13 @@
             <Label Content="{Binding LastName}"  />
             <Label Content="{Binding Salary}" Style="{StaticResource SalaryLabelStyle}" />
             <CheckBox IsChecked="{Binding IsRemoved}" VerticalAlignment="Center" />
+
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="30" Source="{StaticResource SettingsImage}" Margin="5" />
+                    <TextBlock Text="Settings" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
         </StackPanel>
     </DataTemplate>
 
