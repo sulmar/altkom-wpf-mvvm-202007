@@ -30,38 +30,28 @@
 
                             <ListBox.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <Grid />
+                                    <!--<Grid />-->
+                                    <StackPanel Orientation="Horizontal" />
                                 </ItemsPanelTemplate>
                             </ListBox.ItemsPanel>
                                                         
                             <ListBox.ItemTemplate>
+                                
                                 <DataTemplate>
-                                    
-                                    <Canvas Width="400" Height="20">
-                                        <Canvas.ToolTip>
+
+                                    <Rectangle                                          
+                                            Width="{Binding Duration.Seconds}" 
+                                            Height="20" 
+                                            Fill="Black" >
+
+                                        <Rectangle.ToolTip>
                                             <StackPanel>
                                                 <TextBlock Width="200" Text="{Binding Part.Name}" />
                                                 <TextBlock Width="50" Text="{Binding From, StringFormat={}{0:HH:mm}}" />
                                                 <TextBlock Width="50" Text="{Binding To, StringFormat={}{0:HH:mm}}" />
                                             </StackPanel>
-                                        </Canvas.ToolTip>
-
-                                        <Rectangle
-                                            Canvas.Left="{Binding FromTime.TotalMinutes}"
-                                            Width="{Binding Duration.Seconds}" 
-                                            Height="20" 
-                                            Fill="Black" />
-
-
-
-
-                                    </Canvas>
-                                    <!--<StackPanel Orientation="Horizontal">
-                                        <TextBlock Width="200" Text="{Binding Part.Name}" />
-                                        <TextBlock Width="50" Text="{Binding From, StringFormat={}{0:HH:mm}}" />
-                                        <TextBlock Width="50" Text="{Binding To, StringFormat={}{0:HH:mm}}" />
-                                    </StackPanel>-->
-
+                                        </Rectangle.ToolTip>
+                                    </Rectangle>
 
                                 </DataTemplate>
 
