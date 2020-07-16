@@ -26,9 +26,9 @@
 
         public static bool operator ==(Category lc, Category rc)
         {
-            if (object.ReferenceEquals(lc, null))
+            if (ReferenceEquals(lc, null))
             {
-                if (object.ReferenceEquals(rc, null))
+                if (ReferenceEquals(rc, null))
                 {
                     return true;
                 }
