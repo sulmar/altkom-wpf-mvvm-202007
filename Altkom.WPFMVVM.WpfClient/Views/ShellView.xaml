@@ -29,11 +29,11 @@
         </Menu>
 
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-            <Button Command="{Binding ShowViewCommand}" CommandParameter="Customers" >Customers</Button>
-            <Button Command="{Binding ShowViewCommand}" CommandParameter="Products" >Products</Button>
-            <Button Command="{Binding ShowViewCommand}" CommandParameter="Actions" >Actions</Button>
-            <Button Style="{StaticResource SpecialButtonStyle}" >About</Button>
-            <Button>Call</Button>
+            <Button Template="{StaticResource RounderButtonTemplate}" Command="{Binding ShowViewCommand}" CommandParameter="Customers" >Customers</Button>
+            <Button Template="{StaticResource RounderButtonTemplate}" Command="{Binding ShowViewCommand}" CommandParameter="Products" >Products</Button>
+            <Button Template="{StaticResource RounderButtonTemplate}"  Command="{Binding ShowViewCommand}" CommandParameter="Actions" >Actions</Button>
+            <Button Template="{StaticResource RounderButtonTemplate}" Style="{StaticResource SpecialButtonStyle}" >About</Button>
+            <Button Template="{StaticResource RounderButtonTemplate}" >Call</Button>
         </StackPanel>
 
         <StatusBar DockPanel.Dock="Bottom">wersja 1.0</StatusBar>
