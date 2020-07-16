@@ -1,10 +1,12 @@
 ﻿namespace Altkom.WPFMVVM.Models
 {
+
     public class Product : BaseEntity
     {
         private string name;
         private string color;
         private decimal unitPrice;
+        private Category category;
 
         public string Name
         {
@@ -32,6 +34,15 @@
         }
 
         public CMYKColor CMYKColor { get; set; }
+
+        public Category Category
+        {
+            get => category; set
+            {
+                category = value;
+                OnPropertyChanged();
+            }
+        }
 
 
     }

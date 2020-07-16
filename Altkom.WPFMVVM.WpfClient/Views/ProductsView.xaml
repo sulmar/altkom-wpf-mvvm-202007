@@ -28,22 +28,35 @@
 
         <!-- Products -->
 
-        <ListView ItemsSource="{Binding Products}"
-                  SelectedItem="{Binding SelectedProduct}"
-                  >
-            <ListView.View>
-                <GridView AllowsColumnReorder="True">
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Color" DisplayMemberBinding="{Binding Color}" />
-                    <GridViewColumn Header="Unit Price" DisplayMemberBinding="{Binding UnitPrice}" />
-                    <GridViewColumn Header="C" DisplayMemberBinding="{Binding CMYKColor.C}" />
-                    <GridViewColumn Header="M" DisplayMemberBinding="{Binding CMYKColor.M}" />
-                    <GridViewColumn Header="Y" DisplayMemberBinding="{Binding CMYKColor.Y}" />
-                    <GridViewColumn Header="K" DisplayMemberBinding="{Binding CMYKColor.K}" />
+        <DockPanel>
+                           
+            <!-- Filter -->
+            <ComboBox DockPanel.Dock="Top" Margin="10"
+                SelectedItem="{Binding SelectedCategory}"
+                DisplayMemberPath="Name"
+                ItemsSource="{Binding Categories}" />
 
-                </GridView>
-            </ListView.View>
-        </ListView>
+
+            <!-- Product List -->
+            <ListView ItemsSource="{Binding Products}"
+                      SelectedItem="{Binding SelectedProduct}"
+                      >
+                <ListView.View>
+                    <GridView AllowsColumnReorder="True">
+                        <GridViewColumn Header="Category" DisplayMemberBinding="{Binding Category.Name}" />
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Color" DisplayMemberBinding="{Binding Color}" />
+                        <GridViewColumn Header="Unit Price" DisplayMemberBinding="{Binding UnitPrice}" />
+                        <GridViewColumn Header="C" DisplayMemberBinding="{Binding CMYKColor.C}" />
+                        <GridViewColumn Header="M" DisplayMemberBinding="{Binding CMYKColor.M}" />
+                        <GridViewColumn Header="Y" DisplayMemberBinding="{Binding CMYKColor.Y}" />
+                        <GridViewColumn Header="K" DisplayMemberBinding="{Binding CMYKColor.K}" />
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+        </DockPanel>
 
         <!-- Selected Product -->
 
@@ -51,6 +64,15 @@
             <TextBox Text="{Binding SelectedProduct.Name, UpdateSourceTrigger=PropertyChanged}" />
             <TextBox Text="{Binding SelectedProduct.Color, UpdateSourceTrigger=PropertyChanged}" />
             <TextBox Text="{Binding SelectedProduct.UnitPrice, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding SelectedProduct.UnitPrice, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock Text="{Binding SelectedProduct.Category.Name}" />
+
+            <!-- Categories -->
+            <ComboBox 
+                ItemsSource="{Binding Categories}"
+                DisplayMemberPath="Name"      
+                SelectedItem="{Binding SelectedProduct.Category}" />
 
             <CheckBox Content="Increment" IsChecked="{Binding IsIncrement}" />
             <Button Command="{Binding CalculateCommand}" >Calculate</Button>

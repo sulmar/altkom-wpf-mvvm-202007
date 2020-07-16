@@ -38,6 +38,7 @@ namespace Altkom.WPFMVVM.WpfClient
             containerBuilder.RegisterType<FakeProductService>().As<IProductService>();
             containerBuilder.RegisterType<ProductFaker>().As<Faker<Product>>();
             containerBuilder.RegisterType<CMYKColorFaker>().As<Faker<CMYKColor>>();
+            containerBuilder.RegisterType<CategoryFaker>().As<Faker<Category>>();
 
             return containerBuilder;
         }

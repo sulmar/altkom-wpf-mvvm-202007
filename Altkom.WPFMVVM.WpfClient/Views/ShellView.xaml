@@ -17,6 +17,17 @@
 
     <DockPanel>
 
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File" />
+            
+            <MenuItem Header="Views">
+                <MenuItem Header="Customers" Command="{Binding ShowViewCommand}" CommandParameter="Customers" />
+                <MenuItem Header="Products"  Command="{Binding ShowViewCommand}" CommandParameter="Products" />
+                <MenuItem Header="Actions"  Command="{Binding ShowViewCommand}" CommandParameter="Actions" />
+            </MenuItem>
+            
+        </Menu>
+
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
             <Button Command="{Binding ShowViewCommand}" CommandParameter="Customers" >Customers</Button>
             <Button Command="{Binding ShowViewCommand}" CommandParameter="Products" >Products</Button>

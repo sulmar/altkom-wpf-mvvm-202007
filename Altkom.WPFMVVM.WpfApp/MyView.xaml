@@ -1,0 +1,110 @@
+﻿<Window x:Class="Altkom.WPFMVVM.WpfApp.MyView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Altkom.WPFMVVM.WpfApp"
+        mc:Ignorable="d"
+        Title="MyView" Height="800" Width="800">
+    <Grid>
+
+        <StackPanel>
+
+            <!-- zawartosc znacznika -->
+            <Button>Hello 1</Button>
+
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox />
+                    <TextBlock Text="Hello 1" />
+                </StackPanel>
+            </Button>
+
+            <!-- jako atrybut -->
+            <Button Content="Hello 2" />
+
+            <Button Content="{Binding}" />
+
+            <!-- jako element -->
+            <Button>
+                <Button.Content>
+                    Hello 3
+                </Button.Content>
+            </Button>
+
+            <Button Content="Hello 4" Background="Green" >
+            </Button>
+            
+            <Button Content="Hello 5">
+                <Button.Background>
+                    <SolidColorBrush Color="Green" />
+                </Button.Background>
+            </Button>
+
+            <Button Width="200" Height="200" Content="Hello 6">
+                <Button.Background>
+                    <LinearGradientBrush 
+                        StartPoint="0,0"
+                        EndPoint="1,0">
+                        <GradientStop Color="Yellow" />
+                        <GradientStop Offset="0.5" Color="Red" />
+                        <GradientStop Offset="1" Color="Green" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <Button Width="200" Height="200" Content="Hello 6">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="Yellow" />
+                        <GradientStop Offset="1" Color="Black" />
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <TextBlock Text="Hello" />
+            <TextBox Text="Hello" />
+
+            <ProgressBar />
+
+            <Slider />
+            
+            <!-- ItemsSource -->
+
+            <ComboBox ItemsSource="{Binding Countries}">
+                <!--<ComboBoxItem>All</ComboBoxItem>-->
+                <!-- -->
+            </ComboBox>
+            
+            <ListBox >
+                <ListViewItem>Item 1</ListViewItem>
+                <ListViewItem>
+                    <Button>Item 2</Button></ListViewItem>
+                <ListViewItem>Item 3</ListViewItem>
+            </ListBox>
+
+            <TabControl>
+                <TabItem Header="Item 1">Item 1</TabItem>
+                <TabItem Header="Item 2">Item 2</TabItem>
+                <TabItem Header="Item 3">
+                    <Image Width="300" />
+                </TabItem>
+                
+            </TabControl>
+
+            <Menu>
+                <MenuItem Header="_File">
+                    <MenuItem Header="_New" />
+                    <MenuItem Header="Op_en" />
+                    <MenuItem Header="_Exit" />
+                </MenuItem>
+                
+                <MenuItem Header="Item 2">Item 2</MenuItem>
+                <MenuItem Header="Item 3">Item 3</MenuItem>
+                
+            </Menu>
+
+        </StackPanel>
+        
+    </Grid>
+</Window>
