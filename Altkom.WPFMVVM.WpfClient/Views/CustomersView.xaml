@@ -51,7 +51,10 @@
             
         </ListBox>
 
-        <StackPanel Grid.Column="1" DataContext="{Binding SelectedCustomer}" >
+        <StackPanel  Grid.Column="1" >
+                    
+        <!-- Selected Customer Info -->
+        <StackPanel DataContext="{Binding SelectedCustomer}" >
             <TextBlock Text="{Binding Path=FullName, Mode=OneWay}" />
             <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
             <TextBox Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}" />
@@ -64,13 +67,17 @@
                     </MultiBinding>
                 </TextBlock.Text>
             </TextBlock>
-            
-            <CheckBox IsChecked="{Binding Path=IsRemoved}" />
+
+                <CheckBox IsChecked="{Binding Path=IsRemoved}" />
+
+            </StackPanel>
+
+        <!-- Buttons -->
+        <StackPanel Orientation="Horizontal">
             <Button>Send</Button>
+            <Button Command="{Binding ShowActionsCommand}" >Show Actions</Button>
         </StackPanel>
 
-        
-       
-        
+        </StackPanel>
     </Grid>
 </Page>

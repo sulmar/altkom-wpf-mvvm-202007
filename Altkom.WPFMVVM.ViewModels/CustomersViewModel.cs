@@ -5,6 +5,7 @@ using Altkom.WPFMVVM.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Windows.Input;
 
 namespace Altkom.WPFMVVM.ViewModels
 {
@@ -22,6 +23,8 @@ namespace Altkom.WPFMVVM.ViewModels
         }
 
         private readonly ICustomerService customerService;
+        private readonly INavigationService navigationService;
+
         private Customer selectedCustomer;
 
         //public CustomersViewModel()
@@ -29,9 +32,10 @@ namespace Altkom.WPFMVVM.ViewModels
         //{
         //}
 
-        public CustomersViewModel(ICustomerService customerService)
+        public CustomersViewModel(ICustomerService customerService, INavigationService navigationService)
         {
             this.customerService = customerService;
+            this.navigationService = navigationService;
 
             SelectedCustomer = new Customer();
 
@@ -42,6 +46,15 @@ namespace Altkom.WPFMVVM.ViewModels
         private void Load()
         {
             Customers = customerService.Get();
+        }
+
+        public ICommand ShowActionsCommand => new DelegateCommand(ShowActions);
+
+        // public ICommand ShowActionsCommand => new DelegateCommand(()=>navigationService.Navigate("Actions"));
+
+        private void ShowActions()
+        {
+            navigationService.Navigate("Actions");
         }
     }
 }
