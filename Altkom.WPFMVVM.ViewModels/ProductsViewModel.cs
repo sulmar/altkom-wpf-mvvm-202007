@@ -69,16 +69,7 @@ namespace Altkom.WPFMVVM.ViewModels
                     SelectedProduct.PropertyChanged += (s, e) => ToUpperCommand.OnCanExexuteChanged();
 
                 if (SelectedProduct != null)
-                    SelectedProduct.PropertyChanged += (s, e) => 
-                    { 
-                        if (e.PropertyName == nameof(Product.Category))
-                        {
-                            GetProductsByCategory(SelectedCategory);
-                        }
-
-                        return;  
-                    };
-
+                    SelectedProduct.ExecuteOnPropertyChanged(nameof(Product.Category), () => GetProductsByCategory(SelectedCategory));
             }
         }
 
