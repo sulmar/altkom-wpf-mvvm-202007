@@ -15,13 +15,20 @@ namespace Altkom.WPFMVVM.ViewModels
     {
         public ObservableCollection<Product> Products { get; set; }
 
-        public IEnumerable<Product> FilteredProducts { get; set; }
+        public IEnumerable<Product> FilteredProducts
+        {
+            get => filteredProducts; set
+            {
+                filteredProducts = value;
+                OnPropertyChanged();
+            }
+        }
 
         public IEnumerable<Category> Categories => Products
             .Select(p => p.Category)
-            .Union(new List<Category> { Category.All })          
+            .Union(new List<Category> { Category.All })
             .Distinct()
-            .OrderBy(p => p.Id);
+            .OrderBy(p => p.Name);
 
         public Category SelectedCategory
         {
@@ -31,14 +38,20 @@ namespace Altkom.WPFMVVM.ViewModels
                 selectedCategory = value;
 
                 GetProductsByCategory(SelectedCategory);
-                
+
             }
         }
 
         private void GetProductsByCategory(Category category)
         {
-            
-            FilteredProducts = Products.Where(p => p.Category == category).ToList();
+            if (SelectedCategory == Category.All)
+            {
+                FilteredProducts = Products;
+            }
+            else
+            {
+                FilteredProducts = Products.Where(p => p.Category.Equals(category)).ToList();
+            }
         }
 
 
@@ -62,6 +75,7 @@ namespace Altkom.WPFMVVM.ViewModels
         private readonly IProductService productService;
         private Product selectedProduct;
         private Category selectedCategory;
+        private IEnumerable<Product> filteredProducts;
 
         //public ProductsViewModel()
         //    : this(new FakeProductService())

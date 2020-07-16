@@ -19,5 +19,20 @@
             }
         }
 
-}
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Category);
+        }
+
+        public override int GetHashCode()
+        {
+            var hash = Name.GetHashCode();
+            return hash;
+        }
+        private bool Equals(Category category)
+        {
+            return this.Name == category?.Name;
+        }
+
+    }
 }
