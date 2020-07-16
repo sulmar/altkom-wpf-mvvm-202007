@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Altkom.WPFMVVM.WpfClient.Views"
       xmlns:vm="clr-namespace:Altkom.WPFMVVM.ViewModels;assembly=Altkom.WPFMVVM.ViewModels"
+      xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
       xmlns:c="clr-namespace:Altkom.WPFMVVM.WpfClient.Converters"
       DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=ProductsViewModel}"
       mc:Ignorable="d" 
@@ -14,9 +15,19 @@
     <!--<Page.DataContext>
         <vm:ProductsViewModel  />
     </Page.DataContext>-->
+    
+    
 
     <Page.Resources>
         <c:CMYKToBrushConverter x:Key="CMYKConverter" />
+
+        <CollectionViewSource Source="{Binding Categories}" x:Key="SortedCategories">
+            <CollectionViewSource.SortDescriptions>
+                <scm:SortDescription PropertyName="Name" Direction="Ascending" />
+            </CollectionViewSource.SortDescriptions>
+            
+        </CollectionViewSource>
+
     </Page.Resources>
 
     <Grid>
@@ -34,7 +45,7 @@
             <ComboBox DockPanel.Dock="Top" Margin="10"
                 SelectedItem="{Binding SelectedCategory}"
                 DisplayMemberPath="Name"
-                ItemsSource="{Binding Categories}" />
+                ItemsSource="{Binding Source={StaticResource SortedCategories}}" />
 
 
             <!-- Product List -->

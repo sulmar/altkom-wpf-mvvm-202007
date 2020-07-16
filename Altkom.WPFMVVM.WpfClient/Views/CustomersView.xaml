@@ -3,8 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Altkom.WPFMVVM.WpfClient.Views"
-      xmlns:vm="clr-namespace:Altkom.WPFMVVM.ViewModels;assembly=Altkom.WPFMVVM.ViewModels"            
+      xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
       DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=CustomersViewModel}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
@@ -14,6 +13,13 @@
         <!--<Style TargetType="Button">
             <Setter Property="Background" Value="Blue" />
         </Style>-->
+
+        <CollectionViewSource Source="{Binding Customers}" x:Key="SortedCustomers">
+            <CollectionViewSource.SortDescriptions>
+                <scm:SortDescription PropertyName="LastName" />
+                <scm:SortDescription PropertyName="FirstName" />
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
     </Page.Resources>
 
     <!--<Page.DataContext>
@@ -34,7 +40,7 @@
         </Grid.ColumnDefinitions>
         
 
-        <ListBox ItemsSource="{Binding Customers}"                 
+        <ListBox ItemsSource="{Binding Source={StaticResource SortedCustomers}}"                 
                  SelectedItem="{Binding Path=SelectedCustomer}"
                  ItemTemplate="{StaticResource CustomerTemplate}" >
 

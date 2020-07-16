@@ -27,8 +27,7 @@ namespace Altkom.WPFMVVM.ViewModels
         public IEnumerable<Category> Categories => Products
             .Select(p => p.Category)
             .Union(new List<Category> { Category.All })
-            .Distinct()
-            .OrderBy(p => p.Name);
+            .Distinct();
 
         public Category SelectedCategory
         {
