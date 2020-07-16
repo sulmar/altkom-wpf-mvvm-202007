@@ -5,21 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Altkom.WPFMVVM.WpfClient.Views"        
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=ShellViewModel}"
         mc:Ignorable="d"
         Title="ShellView" Height="450" Width="800">
 
     <Window.Resources>
 
-        <!--<sys:Double x:Key="MyWidth">150</sys:Double>-->
-        
+        <!--<sys:Double  x:Key="MyWidth">150</sys:Double>-->
+
     </Window.Resources>
 
     <DockPanel>
 
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-            <Button>Customers</Button>
-            <Button>Products</Button>
-            <Button>Actions</Button>
+            <Button Command="{Binding ShowCustomersCommand}" >Customers</Button>
+            <Button Command="{Binding ShowProductsCommand}" >Products</Button>
+            <Button Command="{Binding ShowActionsCommand}" >Actions</Button>
             <Button Style="{StaticResource SpecialButtonStyle}" >About</Button>
             <Button>Call</Button>
         </StackPanel>
@@ -27,7 +28,7 @@
         <StatusBar DockPanel.Dock="Bottom">wersja 1.0</StatusBar>
 
         <Grid>
-            <Frame Source="ActionsView.xaml" />
+            <Frame x:Name="MainFrame" Source="ActionsView.xaml" />
         </Grid>
 
     </DockPanel>

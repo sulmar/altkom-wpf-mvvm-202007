@@ -22,6 +22,8 @@ namespace Altkom.WPFMVVM.WpfClient.Views
         public ShellView()
         {
             InitializeComponent();
+
+          //  MainFrame.Navigate("Views/Customers.xaml");
         }
     }
 }

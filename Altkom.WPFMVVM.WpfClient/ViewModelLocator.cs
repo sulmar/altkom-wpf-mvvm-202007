@@ -1,5 +1,6 @@
 ﻿using Altkom.WPFMVVM.FakeServices;
 using Altkom.WPFMVVM.FakeServices.Fakers;
+using Altkom.WPFMVVM.IServices;
 using Altkom.WPFMVVM.ViewModels;
 using Autofac;
 using System;
@@ -23,6 +24,9 @@ namespace Altkom.WPFMVVM.WpfClient
             containerBuilder.RegisterType<ProductsViewModel>().SingleInstance();
             containerBuilder.RegisterType<CustomersViewModel>().SingleInstance();
             containerBuilder.RegisterType<ActionsViewModel>().SingleInstance();
+            containerBuilder.RegisterType<ShellViewModel>().SingleInstance();
+
+            containerBuilder.RegisterType<FrameNavigationService>().As<INavigationService>();
 
 #if DEBUG           
             containerBuilder.AddFakeServices();
@@ -42,5 +46,6 @@ namespace Altkom.WPFMVVM.WpfClient
         public ProductsViewModel ProductsViewModel => container.Resolve<ProductsViewModel>();
         public CustomersViewModel CustomersViewModel => container.Resolve<CustomersViewModel>();
         public ActionsViewModel ActionsViewModel => container.Resolve<ActionsViewModel>();
+        public ShellViewModel ShellViewModel => container.Resolve<ShellViewModel>();
     }
 }

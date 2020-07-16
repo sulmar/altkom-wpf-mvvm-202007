@@ -78,6 +78,7 @@
     <Compile Include="ContainerBuilderExtensions.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\CMYKToBrushConverter.cs" />
+    <Compile Include="FrameNavigationService.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="Views\ActionsView.xaml.cs">
       <DependentUpon>ActionsView.xaml</DependentUpon>
