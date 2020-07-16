@@ -15,32 +15,31 @@ namespace Altkom.WPFMVVM.ViewModels
             this.navigationService = navigationService;
         }
 
-        public ICommand ShowCustomersCommand => new DelegateCommand(ShowCustomers);
-        public ICommand ShowProductsCommand => new DelegateCommand(ShowProducts);
-        public ICommand ShowActionsCommand => new DelegateCommand(ShowActions);
+        //public ICommand ShowCustomersCommand => new DelegateCommand(ShowCustomers);
+        //public ICommand ShowProductsCommand => new DelegateCommand(ShowProducts);
+        //public ICommand ShowActionsCommand => new DelegateCommand(ShowActions);
 
         public ICommand ShowViewCommand => new DelegateCommand<string>(p => ShowView(p));
 
-
         private void ShowView(string viewName)
         {
-
+            navigationService.Navigate(viewName);
         }
 
-        private void ShowCustomers()
-        {
-            navigationService.Navigate("Customers");
-        }
+        //private void ShowCustomers()
+        //{
+        //    navigationService.Navigate("Customers");
+        //}
 
-        private void ShowProducts()
-        {
-            navigationService.Navigate("Products");
-        }
+        //private void ShowProducts()
+        //{
+        //    navigationService.Navigate("Products");
+        //}
 
-        private void ShowActions()
-        {
-            navigationService.Navigate("Actions");
-        }
+        //private void ShowActions()
+        //{
+        //    navigationService.Navigate("Actions");
+        //}
     }
 
 
