@@ -15,6 +15,7 @@ namespace Altkom.WPFMVVM.ViewModels
             this.navigationService = navigationService;
         }
 
+
         //public ICommand ShowCustomersCommand => new DelegateCommand(ShowCustomers);
         //public ICommand ShowProductsCommand => new DelegateCommand(ShowProducts);
         //public ICommand ShowActionsCommand => new DelegateCommand(ShowActions);
