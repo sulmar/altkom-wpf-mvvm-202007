@@ -24,6 +24,26 @@
             return Equals(obj as Category);
         }
 
+        public static bool operator ==(Category lc, Category rc)
+        {
+            if (object.ReferenceEquals(lc, null))
+            {
+                if (object.ReferenceEquals(rc, null))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            return lc.Equals(rc);
+        }
+
+        public static bool operator!=(Category lc, Category rc)
+        {
+            return !(lc == rc);
+        }
+
         public override int GetHashCode()
         {
             var hash = Name.GetHashCode();

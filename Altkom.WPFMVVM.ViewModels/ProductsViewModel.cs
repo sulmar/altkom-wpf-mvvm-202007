@@ -50,7 +50,8 @@ namespace Altkom.WPFMVVM.ViewModels
             }
             else
             {
-                FilteredProducts = Products.Where(p => p.Category.Equals(category)).ToList();
+                // FilteredProducts = Products.Where(p => p.Category.Equals(category)).ToList();
+                FilteredProducts = Products.Where(p => p.Category == category).ToList();
             }
         }
 
