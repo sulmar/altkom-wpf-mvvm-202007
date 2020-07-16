@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.ComponentModel;
+using System.Linq;
 
 namespace Altkom.WPFMVVM.Models
 {
@@ -46,8 +47,16 @@ namespace Altkom.WPFMVVM.Models
             }
         }
 
+        public Gender Gender { get; set; }
 
+    }
 
+    public enum Gender : byte
+    {
+        [Description("Mezczyzna")]
+        Male = 0,
 
+        [Description("Kobieta")]
+        Female = 1
     }
 }

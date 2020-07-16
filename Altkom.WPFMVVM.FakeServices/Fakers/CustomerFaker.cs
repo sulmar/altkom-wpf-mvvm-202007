@@ -19,10 +19,8 @@ namespace Altkom.WPFMVVM.FakeServices.Fakers
             RuleFor(p => p.LastName, f => f.Person.LastName);
             RuleFor(p => p.Photo, f => f.Person.Avatar);
             RuleFor(p => p.Salary, f => decimal.Round( f.Random.Decimal(100, 200), 0));
-            
+            RuleFor(p => p.Gender, f => (Gender) f.Person.Gender);
             RuleFor(p => p.IsRemoved, f => f.Random.Bool(0.2f));
-            
-            
         }
     }
 

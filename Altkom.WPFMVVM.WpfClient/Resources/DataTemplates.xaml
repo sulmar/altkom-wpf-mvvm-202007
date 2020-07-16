@@ -59,6 +59,7 @@
         <StackPanel Orientation="Horizontal">
             <Image Width="50" Source="{Binding Photo}" Visibility="{Binding IsRemoved, Converter={StaticResource MyConverter}}" />
             <Image Width="50" Source="{Binding Photo}" Style="{StaticResource PhotoImageStyle}" />
+            <Label Content="{Binding Gender}" />
             <Label Content="{Binding FirstName}"  />
             <Label Content="{Binding LastName}"  />
             <Label Content="{Binding Salary}" Style="{StaticResource SalaryLabelStyle}" />

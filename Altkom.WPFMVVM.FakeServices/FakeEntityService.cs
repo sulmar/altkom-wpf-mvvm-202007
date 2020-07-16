@@ -13,7 +13,7 @@ namespace Altkom.WPFMVVM.FakeServices
 
         public FakeEntityService(Faker<TEntity> faker)
         {
-            entities = faker.Generate(10_000);
+            entities = faker.Generate(1_000);
         }
 
         public virtual void Add(TEntity entity)

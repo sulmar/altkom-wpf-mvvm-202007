@@ -16,9 +16,13 @@
 
         <CollectionViewSource Source="{Binding Customers}" x:Key="SortedCustomers">
             <CollectionViewSource.SortDescriptions>
-                <scm:SortDescription PropertyName="LastName" />
-                <scm:SortDescription PropertyName="FirstName" />
+                <scm:SortDescription PropertyName="LastName" Direction="Ascending" />
+                <scm:SortDescription PropertyName="FirstName" Direction="Descending" />
             </CollectionViewSource.SortDescriptions>
+
+            <CollectionViewSource.GroupDescriptions>
+                <PropertyGroupDescription PropertyName="Gender" />
+            </CollectionViewSource.GroupDescriptions>
         </CollectionViewSource>
     </Page.Resources>
 
@@ -29,20 +33,20 @@
     <!-- this.DataContext = new CustomersViewModel(); -->
 
     <Grid>
-
-        <!--<Label HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               Foreground="White">Customers View</Label>-->
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        
 
         <ListBox ItemsSource="{Binding Source={StaticResource SortedCustomers}}"                 
                  SelectedItem="{Binding Path=SelectedCustomer}"
                  ItemTemplate="{StaticResource CustomerTemplate}" >
+
+            <ListBox.GroupStyle>
+                <GroupStyle>
+                </GroupStyle>
+            </ListBox.GroupStyle>
+            
 
             <!--<ListBox.ItemTemplate>
                 <DataTemplate>
@@ -64,8 +68,9 @@
             <TextBlock Text="{Binding Path=FullName, Mode=OneWay}" />
             <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
             <TextBox Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="{Binding Gender}" />
 
-            <TextBlock>
+                <TextBlock>
                 <TextBlock.Text>
                     <MultiBinding StringFormat="{}{0} {1}">
                         <Binding Path="FirstName" />
