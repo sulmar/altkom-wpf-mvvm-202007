@@ -174,6 +174,10 @@
       <Project>{089522D3-0954-4AEB-9A42-441706623722}</Project>
       <Name>Altkom.WPFMVVM.DbServices</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Altkom.WPFMVVM.Fakers\Altkom.WPFMVVM.Fakers.csproj">
+      <Project>{711F65F3-913C-4652-89F9-F571FC9485F6}</Project>
+      <Name>Altkom.WPFMVVM.Fakers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Altkom.WPFMVVM.FakeServices\Altkom.WPFMVVM.FakeServices.csproj">
       <Project>{BE2A10D3-CE54-4BB4-9D6D-27313ABB3036}</Project>
       <Name>Altkom.WPFMVVM.FakeServices</Name>

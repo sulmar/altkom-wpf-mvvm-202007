@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Altkom.WPFMVVM.FakeServices.Fakers
+namespace Altkom.WPFMVVM.Fakers
 {
     // PM> Install-Package Bogus
     public class CustomerFaker : Faker<Customer>

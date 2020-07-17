@@ -1,7 +1,7 @@
 ﻿using Altkom.WPFMVVM.Models;
 using Bogus;
 
-namespace Altkom.WPFMVVM.FakeServices.Fakers
+namespace Altkom.WPFMVVM.Fakers
 {
     public class CMYKColorFaker : Faker<CMYKColor>
     {

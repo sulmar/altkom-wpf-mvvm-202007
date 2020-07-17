@@ -9,8 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Altkom.WPFMVVM.Fakers\Altkom.WPFMVVM.Fakers.csproj" />
-    <ProjectReference Include="..\Altkom.WPFMVVM.IServices\Altkom.WPFMVVM.IServices.csproj" />
+    <ProjectReference Include="..\Altkom.WPFMVVM.Models\Altkom.WPFMVVM.Models.csproj" />
   </ItemGroup>
 
 </Project>

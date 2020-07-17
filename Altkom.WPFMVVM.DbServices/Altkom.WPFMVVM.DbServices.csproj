@@ -62,6 +62,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Altkom.WPFMVVM.Fakers\Altkom.WPFMVVM.Fakers.csproj">
+      <Project>{711f65f3-913c-4652-89f9-f571fc9485f6}</Project>
+      <Name>Altkom.WPFMVVM.Fakers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Altkom.WPFMVVM.IServices\Altkom.WPFMVVM.IServices.csproj">
       <Project>{8D57A814-31D7-48E8-A2CF-B47BFD7F72C3}</Project>
       <Name>Altkom.WPFMVVM.IServices</Name>

@@ -1,6 +1,6 @@
 ﻿using Altkom.WPFMVVM.DbServices;
+using Altkom.WPFMVVM.Fakers;
 using Altkom.WPFMVVM.FakeServices;
-using Altkom.WPFMVVM.FakeServices.Fakers;
 using Altkom.WPFMVVM.IServices;
 using Altkom.WPFMVVM.Models;
 using Autofac;

@@ -1,13 +1,6 @@
-﻿using Altkom.WPFMVVM.FakeServices;
-using Altkom.WPFMVVM.FakeServices.Fakers;
-using Altkom.WPFMVVM.IServices;
+﻿using Altkom.WPFMVVM.IServices;
 using Altkom.WPFMVVM.ViewModels;
 using Autofac;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Altkom.WPFMVVM.WpfClient
 {

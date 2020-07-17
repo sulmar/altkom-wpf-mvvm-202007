@@ -6,7 +6,7 @@ using System.Text;
 using Action = Altkom.WPFMVVM.Models.Action;
 using System.Linq;
 
-namespace Altkom.WPFMVVM.FakeServices.Fakers
+namespace Altkom.WPFMVVM.Fakers
 {
     public class PartFaker : Faker<Part>
     {

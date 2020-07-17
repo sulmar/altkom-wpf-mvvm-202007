@@ -43,6 +43,16 @@ namespace Altkom.WPFMVVM.DbServices
             modelBuilder.Configurations.Add(new PartConfiguration());
 
             base.OnModelCreating(modelBuilder);
+        }        
+    }
+
+    public class MyInitializer : DropCreateDatabaseAlways<MyContext>
+    {
+        protected override void Seed(MyContext context)
+        {
+          //  context.Categories.AddRange()
+
+            base.Seed(context);
         }
     }
 }
