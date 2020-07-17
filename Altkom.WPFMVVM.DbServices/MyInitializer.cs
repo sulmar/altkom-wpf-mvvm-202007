@@ -1,9 +1,19 @@
-﻿using Altkom.WPFMVVM.Models;
+﻿using Altkom.WPFMVVM.DbServices.Migrations;
+using Altkom.WPFMVVM.Models;
 using Bogus;
 using System.Data.Entity;
 
 namespace Altkom.WPFMVVM.DbServices
 {
+
+    public class MyMigrateInitializer : MigrateDatabaseToLatestVersion<MyContext, Migrations.Configuration>
+    {
+        public MyMigrateInitializer
+            (bool useSuppliedContext, Configuration configuration) : base(useSuppliedContext, configuration)
+        {
+        }
+    }
+
     public class MyInitializer : CreateDatabaseIfNotExists<MyContext>
     {
         private readonly Faker<Product> productFaker;

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="29.0.2" />
+    <PackageReference Include="Sulmar.Bogus.Extensions.Poland" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>

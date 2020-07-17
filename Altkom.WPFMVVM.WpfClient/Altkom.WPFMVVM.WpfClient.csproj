@@ -44,6 +44,9 @@
     <Reference Include="Bogus, Version=29.0.2.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a, processorArchitecture=MSIL">
       <HintPath>..\packages\Bogus.29.0.2\lib\net40\Bogus.dll</HintPath>
     </Reference>
+    <Reference Include="Bogus.Extensions.Poland, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sulmar.Bogus.Extensions.Poland.1.0.0\lib\netstandard2.0\Bogus.Extensions.Poland.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>

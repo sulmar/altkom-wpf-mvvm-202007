@@ -1,8 +1,6 @@
 ﻿using Altkom.WPFMVVM.Models;
 using Bogus;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Bogus.Extensions.Poland;
 
 namespace Altkom.WPFMVVM.Fakers
 {
@@ -21,6 +19,8 @@ namespace Altkom.WPFMVVM.Fakers
             RuleFor(p => p.Salary, f => decimal.Round( f.Random.Decimal(100, 200), 0));
             RuleFor(p => p.Gender, f => (Gender) f.Person.Gender);
             RuleFor(p => p.IsRemoved, f => f.Random.Bool(0.2f));
+            RuleFor(p => p.Birthday, f => f.Person.DateOfBirth);
+            RuleFor(p => p.Pesel, f => f.Person.Pesel());
         }
     }
 
