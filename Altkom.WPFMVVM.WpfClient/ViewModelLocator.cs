@@ -22,7 +22,7 @@ namespace Altkom.WPFMVVM.WpfClient
             containerBuilder.RegisterType<FrameNavigationService>().As<INavigationService>();
 
 //#if DEBUG           
-            //containerBuilder.AddFakeServices();
+           // containerBuilder.AddFakeServices();
 //#else
             containerBuilder.AddDbServices();
 //#endif

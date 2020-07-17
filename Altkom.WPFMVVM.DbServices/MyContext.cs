@@ -22,9 +22,12 @@ namespace Altkom.WPFMVVM.DbServices
         public DbSet<Models.Event> Events { get; set; }
         public DbSet<Models.Part> Parts { get; set; }
 
-        public MyContext(string connectionString)
+        public MyContext(string connectionString, IDatabaseInitializer<MyContext> strategy)
             : base(connectionString)
         {
+            System.Data.Entity.Database.SetInitializer(strategy);
+
+            Database.Initialize(true);
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -48,7 +51,7 @@ namespace Altkom.WPFMVVM.DbServices
         }        
     }
 
-    public class MyInitializer : DropCreateDatabaseAlways<MyContext>
+    public class MyInitializer : CreateDatabaseIfNotExists<MyContext>
     {
         private readonly Faker<Product> productFaker;
         private readonly Faker<Customer> customerFaker;
