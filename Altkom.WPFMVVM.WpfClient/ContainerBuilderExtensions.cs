@@ -17,13 +17,10 @@ namespace Altkom.WPFMVVM.WpfClient
         {
             string connectionString = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
 
-            containerBuilder.RegisterType<DbProductService>().As<IProductService>();
             containerBuilder.RegisterType<MyInitializer>().As<IDatabaseInitializer<MyContext>>();
-
-            
-
             containerBuilder.RegisterType<MyContext>().WithParameter("connectionString", connectionString);
 
+            containerBuilder.RegisterType<DbProductService>().As<IProductService>();
             containerBuilder.RegisterType<FakeCustomerService>().As<ICustomerService>();
             containerBuilder.RegisterType<FakeActionService>().As<IActionService>();
 
