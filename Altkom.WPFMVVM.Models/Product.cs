@@ -6,7 +6,7 @@
         private string name;
         private string color;
         private decimal unitPrice;
-        private Category category;
+        private Category category; // Navigation Property
 
         public string Name
         {

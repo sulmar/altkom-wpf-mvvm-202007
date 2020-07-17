@@ -33,12 +33,18 @@ namespace Altkom.WPFMVVM.DbServices
 
         public IEnumerable<Product> Get()
         {
-            return entities.ToList();
+            // Eager loading
+            return entities.Include(p => p.Category).ToList();
         }
 
         public Product Get(int id)
         {
-            return entities.Find(id);
+            Product product = entities.Find(id);
+
+            // Explicitly loading
+            context.Entry(product).Reference(p => p.Category).Load();
+
+            return product;
         }
 
         public void Remove(int id)
