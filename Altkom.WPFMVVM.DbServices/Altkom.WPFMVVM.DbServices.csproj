@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\ActionConfiguration.cs" />
+    <Compile Include="Configurations\CategoryConfiguration.cs" />
+    <Compile Include="Configurations\CustomerConfiguration.cs" />
+    <Compile Include="Configurations\EventConfiguration.cs" />
+    <Compile Include="Configurations\PartConfiguration.cs" />
+    <Compile Include="Configurations\ProductConfiguration.cs" />
     <Compile Include="DbProductService.cs" />
     <Compile Include="MyContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
