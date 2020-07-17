@@ -5,12 +5,20 @@ using Bogus;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Altkom.WPFMVVM.DbServices
 {
+    //public class MigrationsContextFactory : IDbContextFactory<MyContext>
+    //{
+    //    public MyContext Create()
+    //    {
+    //        return new MyContext("MyConnection", new MyInitializer();
+    //    }
+    //}
 
     // PM> Install-Package EntityFramework
     public class MyContext : DbContext
@@ -21,6 +29,11 @@ namespace Altkom.WPFMVVM.DbServices
         public DbSet<Models.Action> Actions { get; set; }
         public DbSet<Models.Event> Events { get; set; }
         public DbSet<Models.Part> Parts { get; set; }
+
+        public MyContext()
+            : base("MyConnection")
+        {
+        }
 
         public MyContext(string connectionString, IDatabaseInitializer<MyContext> strategy)
             : base(connectionString)

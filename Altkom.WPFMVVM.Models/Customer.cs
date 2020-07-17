@@ -50,6 +50,10 @@ namespace Altkom.WPFMVVM.Models
 
         public Gender Gender { get; set; }
 
+        public DateTime Birthday { get; set; }
+
+        public string Pesel { get; set; }
+
     }
 
     public enum Gender : byte
