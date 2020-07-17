@@ -8,8 +8,7 @@ namespace Altkom.WPFMVVM.Models
     {
         public int Number { get; set; }
         public string Name { get; set; }
-
-        public IEnumerable<Event> Events { get; set; }
+        public ICollection<Event> Events { get; set; }
         
     }
 

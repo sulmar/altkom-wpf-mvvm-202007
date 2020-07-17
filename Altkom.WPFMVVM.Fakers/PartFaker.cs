@@ -38,7 +38,7 @@ namespace Altkom.WPFMVVM.Fakers
             RuleFor(p => p.Id, f => f.IndexFaker);
             RuleFor(p => p.Name, f => f.Hacker.Verb());
             RuleFor(p => p.Number, f => f.IndexFaker + 1);
-            RuleFor(p => p.Events, f => eventFaker.Generate(f.Random.Short(3, 7)).OrderBy(e=>e.From));
+            RuleFor(p => p.Events, f => eventFaker.Generate(f.Random.Short(3, 7)).OrderBy(e=>e.From).ToList());
         }
     }
 }
