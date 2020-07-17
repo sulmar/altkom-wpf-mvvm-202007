@@ -6,13 +6,13 @@ using System.Data.Entity;
 namespace Altkom.WPFMVVM.DbServices
 {
 
-    public class MyMigrateInitializer : MigrateDatabaseToLatestVersion<MyContext, Migrations.Configuration>
-    {
-        public MyMigrateInitializer
-            (bool useSuppliedContext, Configuration configuration) : base(useSuppliedContext, configuration)
-        {
-        }
-    }
+    //public class MyMigrateInitializer : MigrateDatabaseToLatestVersion<MyContext, Migrations.Configuration>
+    //{
+    //    public MyMigrateInitializer
+    //        (bool useSuppliedContext, Configuration configuration) : base(useSuppliedContext, configuration)
+    //    {
+    //    }
+    //}
 
     public class MyInitializer : CreateDatabaseIfNotExists<MyContext>
     {

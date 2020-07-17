@@ -88,8 +88,9 @@
         <!-- Selected Customer Info -->
         <StackPanel DataContext="{Binding SelectedCustomer}" >
             <TextBlock Text="{Binding Path=FullName, Mode=OneWay}" />
-            <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBox Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+            <TextBox Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+            
             <TextBlock Text="{Binding Gender}" />
 
                 <TextBlock>

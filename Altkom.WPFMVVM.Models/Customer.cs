@@ -5,7 +5,7 @@ using System.Linq;
 namespace Altkom.WPFMVVM.Models
 {
 
-    public class Customer : BaseEntity
+    public class Customer : BaseEntity, IDataErrorInfo
     {
         public string FirstName
         {
@@ -54,6 +54,39 @@ namespace Altkom.WPFMVVM.Models
 
         public string Pesel { get; set; }
 
+        #region IDataErrorInfo
+        public string Error => string.Empty;
+
+        public string this[string columnName]
+        {
+            get
+            {
+                if (columnName==nameof(FirstName))
+                {
+                    if (string.IsNullOrWhiteSpace(FirstName))
+                    {
+                        return "Imie jest wymagane";
+                    }
+
+                    if (FirstName.Length < 3)
+                    {
+                        return "Imie zbyt krotkie";
+                    }
+                }
+
+                if (columnName == nameof(LastName))
+                {
+                    if (string.IsNullOrWhiteSpace(LastName))
+                    {
+                        return "Nazwisko jest wymagane";
+                    }
+                }
+
+                return null;
+            }
+        }
+
+        #endregion
     }
 
     public enum Gender : byte
