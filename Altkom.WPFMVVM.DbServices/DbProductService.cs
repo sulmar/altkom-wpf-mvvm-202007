@@ -21,30 +21,30 @@ namespace Altkom.WPFMVVM.DbServices
             this.context = context;
         }
 
-        public void Add(TEntity entity)
+        public virtual void Add(TEntity entity)
         {
             entities.Add(entity);
             context.SaveChanges();
         }
 
-        public IEnumerable<TEntity> Get()
+        public virtual IEnumerable<TEntity> Get()
         {
             return entities.ToList();
         }
 
-        public TEntity Get(int id)
+        public virtual TEntity Get(int id)
         {
             return entities.Find(id);
         }
 
-        public void Remove(int id)
+        public virtual void Remove(int id)
         {
             TEntity entity = Get(id);
             entities.Remove(entity);
             context.SaveChanges();
         }
 
-        public void Update(TEntity entity)
+        public virtual void Update(TEntity entity)
         {
             entities.Attach(entity);
             context.SaveChanges();
