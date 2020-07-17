@@ -21,8 +21,8 @@ namespace Altkom.WPFMVVM.WpfClient
             containerBuilder.RegisterType<MyContext>().WithParameter("connectionString", connectionString);
 
             containerBuilder.RegisterType<DbProductService>().As<IProductService>();
-            containerBuilder.RegisterType<FakeCustomerService>().As<ICustomerService>();
-            containerBuilder.RegisterType<FakeActionService>().As<IActionService>();
+            containerBuilder.RegisterType<DbCustomerService>().As<ICustomerService>();
+            containerBuilder.RegisterType<DbActionService>().As<IActionService>();
 
             containerBuilder.AddFakers();
 

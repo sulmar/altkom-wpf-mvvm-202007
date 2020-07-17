@@ -59,8 +59,12 @@
     <Compile Include="Configurations\EventConfiguration.cs" />
     <Compile Include="Configurations\PartConfiguration.cs" />
     <Compile Include="Configurations\ProductConfiguration.cs" />
+    <Compile Include="DbActionService.cs" />
+    <Compile Include="DbCustomerService.cs" />
+    <Compile Include="DbEntityService.cs" />
     <Compile Include="DbProductService.cs" />
     <Compile Include="MyContext.cs" />
+    <Compile Include="MyInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
