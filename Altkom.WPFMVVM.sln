@@ -9,13 +9,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.WPFMVVM.WindowsForms
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.WPFMVVM.WpfClient", "Altkom.WPFMVVM.WpfClient\Altkom.WPFMVVM.WpfClient.csproj", "{54BF342A-D000-4860-8CFE-A93CBC96F826}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.WPFMVVM.Models", "Altkom.WPFMVVM.Models\Altkom.WPFMVVM.Models.csproj", "{FC53E507-BB61-4080-BDAA-D121E9E31A42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Altkom.WPFMVVM.Models", "Altkom.WPFMVVM.Models\Altkom.WPFMVVM.Models.csproj", "{FC53E507-BB61-4080-BDAA-D121E9E31A42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.WPFMVVM.IServices", "Altkom.WPFMVVM.IServices\Altkom.WPFMVVM.IServices.csproj", "{8D57A814-31D7-48E8-A2CF-B47BFD7F72C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Altkom.WPFMVVM.IServices", "Altkom.WPFMVVM.IServices\Altkom.WPFMVVM.IServices.csproj", "{8D57A814-31D7-48E8-A2CF-B47BFD7F72C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.WPFMVVM.FakeServices", "Altkom.WPFMVVM.FakeServices\Altkom.WPFMVVM.FakeServices.csproj", "{BE2A10D3-CE54-4BB4-9D6D-27313ABB3036}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Altkom.WPFMVVM.FakeServices", "Altkom.WPFMVVM.FakeServices\Altkom.WPFMVVM.FakeServices.csproj", "{BE2A10D3-CE54-4BB4-9D6D-27313ABB3036}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.WPFMVVM.ViewModels", "Altkom.WPFMVVM.ViewModels\Altkom.WPFMVVM.ViewModels.csproj", "{B644001A-DE78-4E24-8583-FF6FB69C786A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Altkom.WPFMVVM.ViewModels", "Altkom.WPFMVVM.ViewModels\Altkom.WPFMVVM.ViewModels.csproj", "{B644001A-DE78-4E24-8583-FF6FB69C786A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.WPFMVVM.DbServices", "Altkom.WPFMVVM.DbServices\Altkom.WPFMVVM.DbServices.csproj", "{089522D3-0954-4AEB-9A42-441706623722}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{B644001A-DE78-4E24-8583-FF6FB69C786A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B644001A-DE78-4E24-8583-FF6FB69C786A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B644001A-DE78-4E24-8583-FF6FB69C786A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{089522D3-0954-4AEB-9A42-441706623722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089522D3-0954-4AEB-9A42-441706623722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089522D3-0954-4AEB-9A42-441706623722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089522D3-0954-4AEB-9A42-441706623722}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

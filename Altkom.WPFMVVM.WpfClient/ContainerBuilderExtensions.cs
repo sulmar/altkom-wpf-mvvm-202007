@@ -1,9 +1,11 @@
-﻿using Altkom.WPFMVVM.FakeServices;
+﻿using Altkom.WPFMVVM.DbServices;
+using Altkom.WPFMVVM.FakeServices;
 using Altkom.WPFMVVM.FakeServices.Fakers;
 using Altkom.WPFMVVM.IServices;
 using Altkom.WPFMVVM.Models;
 using Autofac;
 using Bogus;
+using System.Configuration;
 
 namespace Altkom.WPFMVVM.WpfClient
 {
@@ -12,10 +14,19 @@ namespace Altkom.WPFMVVM.WpfClient
     {
         public static ContainerBuilder AddDbServices(this ContainerBuilder containerBuilder)
         {
+            string connectionString = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
 
-            // TODO:
+            containerBuilder.RegisterType<DbProductService>().As<IProductService>();
+            
+            containerBuilder.AddFakeCustomers();
+            containerBuilder.AddFakeActions();
+
+            containerBuilder.RegisterType<MyContext>().WithParameter("connectionString", connectionString);
+
             return containerBuilder;
         }
+
+
         public static ContainerBuilder AddFakeServices(this ContainerBuilder containerBuilder)
         {
             containerBuilder.AddFakeCustomers();
