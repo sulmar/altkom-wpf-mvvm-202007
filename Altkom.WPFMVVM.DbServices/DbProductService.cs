@@ -9,6 +9,48 @@ using System.Threading.Tasks;
 
 namespace Altkom.WPFMVVM.DbServices
 {
+    public abstract class DbEntityService<TEntity> : IEntityService<TEntity>
+        where TEntity : BaseEntity
+    {
+        private readonly MyContext context;
+
+        protected DbSet<TEntity> entities => context.Set<TEntity>();
+
+        public DbEntityService(MyContext context)
+        {
+            this.context = context;
+        }
+
+        public void Add(TEntity entity)
+        {
+            entities.Add(entity);
+            context.SaveChanges();
+        }
+
+        public IEnumerable<TEntity> Get()
+        {
+            return entities.ToList();
+        }
+
+        public TEntity Get(int id)
+        {
+            return entities.Find(id);
+        }
+
+        public void Remove(int id)
+        {
+            TEntity entity = Get(id);
+            entities.Remove(entity);
+            context.SaveChanges();
+        }
+
+        public void Update(TEntity entity)
+        {
+            entities.Attach(entity);
+            context.SaveChanges();
+        }
+    }
+
     public class DbProductService : IProductService
     {
         private readonly MyContext context;
